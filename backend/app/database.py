@@ -1,6 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from .config import settings
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
 
 DATABASE_URL = (
     f"postgresql://{settings.DB_USER}:{settings.DB_PASSWORD}@"
@@ -9,3 +12,8 @@ DATABASE_URL = (
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+
+__all__ = ["Base", "engine", "SessionLocal"]
+
