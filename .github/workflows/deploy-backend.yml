@@ -41,5 +41,6 @@ jobs:
           export POSTGRES_USER=${{ secrets.POSTGRES_USER }}
           export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
 
-          docker-compose down || true
-          docker-compose up --build -d
+          sudo docker-compose down || true
+          sudo docker-compose up --build -d
+
