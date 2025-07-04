@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings  # o from pydantic import BaseSettings si usas v1
 
 class Settings(BaseSettings):
     AWS_ACCESS_KEY_ID: str
@@ -9,13 +9,13 @@ class Settings(BaseSettings):
     TWILIO_AUTH_TOKEN: str
     TWILIO_PHONE_NUMBER: str
 
-    DB_HOST: str = "db"
-    DB_PORT: int = 5432
+    DB_HOST: str
+    DB_PORT: int
     DB_NAME: str
     DB_USER: str
     DB_PASSWORD: str
 
     class Config:
-        pass
+        env_file = ".env"  # opcional, útil localmente pero no necesario en producción
 
 settings = Settings()
