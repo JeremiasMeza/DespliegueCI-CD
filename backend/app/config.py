@@ -14,8 +14,7 @@ class Settings(BaseSettings):
     DB_NAME: str
     DB_USER: str
     DB_PASSWORD: str
-
     class Config:
-        env_file = ".env"  # opcional, útil localmente pero no necesario en producción
+        pass
 
 settings = Settings()
