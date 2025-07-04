@@ -29,5 +29,5 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd DespliegueCI-CD
-          docker compose down || true
-          docker compose up --build -d
+          docker-compose down || true
+          docker-compose up --build -d
